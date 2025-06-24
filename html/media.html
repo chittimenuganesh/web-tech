@@ -1,0 +1,48 @@
+<!--audio and video and embededand external file -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>media</title>
+  </head>
+  <body>
+    <!--audio-->
+    <!--controls gives play/pause userinterface-->
+    <!--autoplay, loop, muted also used.-->
+    <h6>audio file:</h6>
+    <br />
+    <audio controls>
+      <source src="files/audio.mp3" type="audio/mp3" />
+    </audio>
+
+    <!--video-->
+    <!--poster="image.jpg" to show the thumbnail-->
+    <h6>video file:</h6>
+    <video width="100" controls>
+      <source src="files/video.mp4" type="video/mp4" /></video
+    ><br />
+
+    <!--embeded other pages-->
+    <!--iframe tag is used-->
+    <h6>embeded video :</h6>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/-ensdxFTLGk?si=NJ3G4wlsWJaedawM"
+      title="YouTube video player"
+      allowfullscreen
+    ></iframe
+    ><br />
+
+    <!--object tag is used to show external apps and plugins and pdf-->
+    <h6>pdf using object tag:</h6>
+    <object data="files/art_of_war.pdf" height="500" width="400">
+      pdf not supported
+    </object>
+    <!--pdf using embeded-->
+    <!--
+    <embed src="file-link" type="application/extension" />
+    -->
+  </body>
+</html>
