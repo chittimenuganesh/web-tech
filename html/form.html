@@ -1,0 +1,64 @@
+<!--forms-->
+<!--a Form helps to take input from user and send the data to the server.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>forms</title>
+    </head>
+    <body>
+        <form action="submit.php" method="post">
+            <!--for attribute is used for matches the input "id" of input tag-->
+            <label for="username">username:</label>
+            <input type="text" id="username" name="username" placeholder="your name" required>
+            <!-- to enter compulsory data use " required"-->
+            <!--name="" it is the key to send the data-->
+            <!--use " placeholders" attribute to direct the users while inputing-->
+            <br>
+            <button type="submit">submit</button>
+            <button type="reset"> clear</button>
+
+            <br><hr>
+
+            <!--for long text-->
+            <textarea name="message" rows="5" cols="30">Type here...</textarea>
+
+            <br><hr>
+
+            <!--drop down -->
+            <label for="fruit">Select a Fruit</label>
+            <select id="fruit" name="fruit">
+                <option value="apple">apple</option>
+                <option value="banana">banana</option>
+            </select>
+            
+
+        </form>
+        
+    </body>
+</html>
+
+<!--
+    action : URL where data is sent like to server.
+    method : data hidden in body
+     -> get -> data visible in URL
+     -> post -> data hidden in body 
+-->
+
+<!--
+ ______<input> tag type attribute___________
+    text : one line text input
+    password : hidden input
+    email : email validation
+    number : number input
+    checkbox : multiple options
+    radio : select only one
+    submit : submitt the form
+    reset : clear the whole form
+    file : upload a file
+    date,time : pick dates/times
+    hidden : hidden data
+-->
+
+<!--
+    For file uploads: use enctype="multipart/form-data" in <form>
+-->

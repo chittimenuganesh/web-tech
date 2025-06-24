@@ -1,0 +1,73 @@
+<!--table-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Table</title>
+    </head>
+    <body>
+        <!--Table structure-->
+        <table border="01">
+            <tr>
+                <th>heading 1</th>
+                <th>heading 2</th>
+            </tr>
+            <tr>
+                <td>data 1</td>
+                <td>data 2</td>
+            </tr>
+        </table>
+        <!--
+            <table>	: Table : Container for the whole table
+            <tr> :	Table Row : One horizontal row
+            <th> : Table Header : Bold, centered text (used for headings)
+            <td> : Table Data : Regular cell in a row
+        -->
+        <hr>
+        <!--colspan : column merging-->
+        <table border="1">
+            <tr>
+                <td colspan="2">merged 2 columns</td>
+            </tr>
+        </table>
+        <hr>
+        <!--rowspan : merging rows-->
+        <table border="1">
+            <tr>
+                <td rowspan="2">merged 2 rows</td>
+                <td>row 1</td>
+            </tr>
+            <tr>
+                <td>row 2</td>
+            </tr>
+        </table>
+        <hr>
+        <!--semantic tables-->
+        <h1>semantic_tags</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Apple</td>
+                    <td>₹20</td>
+                </tr>
+                <tr>
+                    <td>Banana</td>
+                    <td>₹10</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td>₹30</td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </body>
+</html>
+
