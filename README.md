@@ -10,7 +10,8 @@ Restarting a new journey toward mastering web development.
 
 ## Structure
 
-- `html/` – All HTML practice files
+- `html` – All HTML practice files
+    - `files` - Audio,picture,video,PDF files
 - `css/` – Styling practice (to be added)
 
 ## Why
