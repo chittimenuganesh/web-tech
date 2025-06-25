@@ -1,0 +1,42 @@
+/* element selector */
+p{
+    color: green;
+}
+
+/* class selector */
+.box{
+    background-color: black;
+    color: red;
+    padding: 10px;
+}
+
+/* id selector */
+#tag{
+    font-style: italic;
+    color: aqua;
+}
+
+/* group selector */
+h1, p{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* descendent selector */
+div p {
+    font-weight: bolder;
+}
+
+/* child selector */
+ul > li {
+    color: red;
+}
+
+/* universal selector */
+*{
+    box-sizing: border-box;
+}
+
+/* attribute selector */
+input[type="text"] {
+    border: 2px solid royalblue;
+}
