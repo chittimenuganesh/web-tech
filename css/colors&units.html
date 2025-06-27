@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>colours & units</title>
+        <style>
+            /* color styling */
+            p {
+                color: red;
+            }
+            h1 {
+                color: #3498db;  /* hex */
+            }
+            .box {
+                background-color: rgba(0, 0, 0, 0.555);
+            }
+
+            /*  units stylings */
+            html {
+            font-size: 16px; /* root font-size for rem */
+            }
+
+            body {
+            font-family: sans-serif;
+            padding: 20px;
+            }
+
+            /* % relative to parent width */
+            .percent-box {
+            width: 50%;
+            background-color: lightblue;
+            padding: 10px;
+            margin-bottom: 20px;
+            }
+
+            /* em relative to parent font-size */
+            .em-box {
+            font-size: 20px;
+            color: darkgreen;
+            }
+            .em-box p {
+            font-size: 2em; 
+            }
+
+            /* rem relative to html root */
+            .rem-box p {
+            font-size: 1.5rem; 
+            color: #a83279;
+            }
+
+            /* viewport width */
+            .vw-box {
+            width: 50vw;
+            background-color: orange;
+            padding: 10px;
+            margin-top: 20px;
+            }
+
+            /* viewport height */
+            .vh-box {
+            height: 30vh;
+            background-color: lightgray;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <p>colors:</p>
+        <!--
+             value : when it used
+           - - - - - - - - - - - - - - - -
+            - name : fast & redable
+            - hex : hexacode of colors 
+            - rgb : more control
+            - rgba : transparency control
+            - hsl : advanced color control
+        -->
+        <div class="box">
+            <p>path $1</p>
+            <p style="color: rgb(0, 200, 100);">RGB example</p>
+            <p style="color: hsl(300, 50%, 50%);">HSL example</p>
+            <p style="color: rgba(255, 0, 0, 0.4);">RGBA with transparency</p>
+        </div>
+        <h1>learn #!</h1><hr>
+
+        <h5>units:</h5>
+         <div class="percent-box">This box is 50% width of parent</div>
+
+        <div class="em-box">
+            <p>This text is 2em → 2× parent font-size</p>
+        </div>
+
+        <div class="rem-box">
+            <p>This text is 1.5rem → 1.5× root font-size</p>
+        </div>
+
+        <div class="vw-box">Width = 50vw (50% of viewport width)</div>
+
+        <div class="vh-box">Height = 30vh (30% of viewport height)</div>
+    </body>
+</html>
