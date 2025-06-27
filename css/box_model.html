@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>box-model</title>
+        <style>
+            .card{
+                width: 200px;
+                height: 100px;
+                border: 3px solid red;
+                margin: 25px;
+                padding: 15px;
+                box-sizing: border-box;
+            }
+            p{
+                font-style: italic;
+                font-weight: bolder;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            box-model
+            <p>[inspect the page for box model view [ctrl+shift+i]]</p>
+        </div>
+    </body>
+</html>
+<!--
+   margin:Space outside the border
+   border:line around the content
+   padding:space b/w border & content
+   content:the raw data
+-->
