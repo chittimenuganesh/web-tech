@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>display_types</title>
+        <style>
+            .box1{
+                margin-bottom: 10px;
+                display:block;
+                background-color: crimson;
+                color: white;
+                padding: 10px;
+                width: 200px;
+            }
+            .box2{
+                display: inline;
+                background-color: gold;
+                padding: 10px;
+                margin: 10px;
+            }
+            .box3{
+                display: inline-block;
+                background-color: lightblue;
+                padding: 10px;
+                margin: 10px;
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box1">block</div>
+        <span class="box2">inline</span>
+        <span class="box3">inline-block</span>
+    </body>
+</html>
+
+<!--
+     display type control how element flow, stck and occupy the space.
+
+     - block : takes full width, start on a new line - div,p
+     - inline : takes only content width, flows with text : span , a
+     - inline-block : like inline but accepts width/height/padding
+-->
