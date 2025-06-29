@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>flex box</title>
+        <style>
+            .container{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                height: 100vh;
+                background: #222;
+                color: white;
+                gap: 20px;
+            }
+            .item{
+                background: teal;
+                padding: 20px;
+                border-radius: 8px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item">one </div>
+            <div class="item">two</div>
+            <div class="item">three</div>
+        </div>
+    </body>
+</html>
+
+<!--
+    # why :
+     - 1D layuouts - align items in rows and column
+     - dynamic spacing
+     - making your layout responsive and clean
+
+    # property       : function [ container]
+    - flex-direction : row/column
+    - justify-content: main-axis alignment(start, center, end, space-between, space-around, space-evenly)
+    - align-item     : cross axis (start, center, end, stretch)
+    - gap            : space between items
+    - flex-grow      : how much to grow [item]
+    - flex-shrink    : how much to shrink
+    - flex-basic     : initilise size
+    - align-self     : pverride container's align-items
+-->
+
+<!--
+# gap : 20px
+
+| [ A ]  20px  [ B ]  20px  [ C ] |
+
+# justify-content : space-around
+
+| space [ A ] space [ B ] space [ C ] space |
+
+-->
