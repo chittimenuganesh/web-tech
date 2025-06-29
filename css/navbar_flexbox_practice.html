@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar-flexboxce-practice</title>
+    <style>
+      .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background-color: #222;
+        color: white;
+      }
+      .logo{
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .nav-links{
+        display: flex;
+        gap: 20px;
+        list-style: none;
+      }
+      .nav-links a{
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+      }
+      .nav-links a:hover{
+        color: cyan;
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">mysite</div>
+      <ul class="nav-links">
+        <li><a href="#">home</a></li>
+        <li><a href="#">about</a></li>
+        <li><a href="#">projects</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
+    </div>
+    
+  </body>
+</html>
