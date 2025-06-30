@@ -1,0 +1,41 @@
+<!-- media queries : let your css respond to device size, orentation, resolution -->
+ <!-- 
+@media (condition) {
+    rules apply here if condition is true
+}
+ -->
+<!-- most used media features -->
+ <!-- 
+max-width  : applies style up to that width
+min-width  : applies styles from mentioned width
+orientation : portrait vs landscape
+max-height ; optional - for height constraints
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>media queries</title>
+        <style>
+            .box{
+                background-color: red;
+            }
+            /* less than 600 px screen size it triggers  */
+            @media (max-width: 600px){
+                .box{
+                    background-color: blue;
+                }
+            }
+            @media (min-width: 901px){
+                .box{
+                    background-color: green ;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">change screen size in inspect page</div>
+    </body>
+ </html>
