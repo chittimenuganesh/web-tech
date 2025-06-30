@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>transistions & animations</title>
+        <style>
+            /* syntax for transistion  */
+            /* change from one css property value to another by smmoth animations */
+            /* 
+                selector {
+                    transition: property duration timing-function delay;
+                }
+
+            */
+            button{
+                background-color: blue;
+                transition: background-color 1s ease-in-out;
+            }
+            button:hover{
+                background-color: crimson;
+            }
+            /* transform */
+            .trans:hover{
+                transform: translateX(180px) rotate(25deg);
+            }
+            /* @keyframe */
+            .element{
+                width: 100px;
+                height: 100px;
+                background-color: cyan;
+                animation: x 1s ease forwards;
+            }
+            @keyframes x {
+                0% {transform: translateX(-200px); opacity: 0;}
+                100% {transform: translateX(0); opacity: 1;}
+            }
+            /* animations */
+            
+            .box{
+                height: 100px;
+                width: 100px;
+                background-color: red;
+                animation-name: y;
+                animation-duration: 2s;
+                animation-timing-function: ease-in-out;
+                animation-delay: 0.5s;
+                animation-iteration-count: 2;
+                animation-fill-mode: backwards;
+            }
+            @keyframes y {
+                0% {transform: translateX(-200px); opacity: 0;}
+                100% {transform: translateX(0); opacity: 1;}
+            }
+        </style>
+    </head>
+    <body>
+        <h1>transistions :</h1>
+        <button>click here</button>
+        <hr>
+        <h1>transform :</h1>
+        <button class="trans">transform property</button>
+        <hr>
+        <h1>@keyframe :</h1>
+        <div class="element">@keyframe</div>
+        <hr>
+        <h1>animations in css:</h1>
+        <div class="box">animations</div>
+    </body>
+</html>
+<!-- transistion info : -->
+<!--
+# Part	: meaning
+- all     : apply to all animatable props
+- 0.5s	: duration
+- ease-in-out	: timing function
+- 0s	     : delay
+-->
+
+<!--
+"timing functions"
+# function : description
+- linear   : constant spped
+- ease     : default. start slow and ends slow
+- ease-in  : start slow
+- ease-out : ends slow
+- ease-in-out : slow both ends
+- cubic-bezier : custom curve
+-->
+
+<!-- tranform property info : -->
+ <!-- 
+position : translatex() , translatey()
+scale : scale()
+rotation : rotate ()
+skew : skewx(), skewy()
+ -->
