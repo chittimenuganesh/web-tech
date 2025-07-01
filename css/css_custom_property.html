@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>css custom proprty</title>
+        <style>
+            :root{
+                --bg-color:cyan;
+                --text-color:red;
+                --padding:20px;
+                --border-radius:10px;
+            }
+            .box{
+                background-color: var(--bg-color);
+                padding: var(--padding);
+                color: var(--text-color);
+                border-radius: var(--border-radius);
+                height: 100px;
+                width: 100px;
+            }
+            .special-card{
+                
+                color: var(--text-color);
+            }
+            button{
+                background-color: var(--bg-color);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box special-card">box</div><br>
+        <button>click here../</button>
+    </body>
+</html>
+
+<!--css custom properties allows to create variables in CSS-->
+<!--why : change theme to dark/light, cleaner structure-->
+<!--
+- must begin with -- (e.g., --color)
+- scope:
+ > defined in :root → global
+ > defined inside a selector → local to that block
+ > use with var(--name)
+ex : color: var(--color);
+-->
