@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>pseudo classes</title>
+        <style>
+            .card{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .box{
+                height: 100px;
+                width: 100px;
+                background-color: aqua;
+                gap: 20px;
+            }
+            .box:nth-child(odd){
+                background-color: red;
+            }
+            .box:hover{
+                background-color: black;
+                color: white;
+            }
+            .box:first-child{
+                border: 2px solid green;
+            }
+            .box:last-child{
+                border: 2px solid green;
+            }
+            .box:not(.important){
+                border-radius: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box important">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+    </body>
+</html>
+
+<!--
+- syntax:
+    slector:pseudo-class{
+    // class
+    }
+-->
+<!--
+    pseudo-class     | trigeered when
+- :hover             | mouse hovers over the element
+- :active            | element is being pressed
+- :focus             | elemented is selected ( e.g., input box)
+- :first-child       | first child inside a parent
+- :last-child        | last child inside a parent
+- :nth-child(n)      | matches the nth element
+- :not(selector)     | matches everything expected selector
+- :cheked            | input types="chckbox" or radio is checked
+- :disabled          | input or button is diabled
+-->
