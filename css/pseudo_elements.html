@@ -1,0 +1,49 @@
+<!--pseudo elements are the keywords in CSS which allows to style specific parts of an element-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>pseudo elements</title>
+        <style>
+            h1::before{
+                content:"🔥"
+            }
+            h1::after{
+                content: "⚔️";
+            }
+            .button::before{
+                content: "⚔️";
+                margin-left: 10px;
+            }
+            input::placeholder{
+                color: grey;
+                font-style: italic;
+            }
+            .blockquote::before {
+                content: "“";
+                font-size: 2rem;
+            }
+            .blockquote::after {
+                content: "”";
+                font-size: 2rem;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>example</h1>
+        <div class="button blockquote">badge/label</div>
+        <label for="name">[special use case in input element] name:</label>
+        <input type="text" placeholder="your name">
+    </body>
+</html>
+
+<!--
+# pseudo elements :
+::before - creates virtual content before the element's real content
+::after - creates virtual content after the element's real content
+::first-line - style only the first line of a paragraph
+::first-letter - style only the first leeter of a block of text
+::placeholder - style the placeholder text of <input> element
+-->
