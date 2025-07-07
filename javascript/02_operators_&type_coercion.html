@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operators & type coercion</title>
+</head>
+<body>
+    <h1>check console../</h1>
+    <script>
+        let arth = 'arthimethic operations:';
+        let a = 25;
+        let b = 3;
+
+        console.log("addition:",a+b);
+        console.log("subtraction:",a-b);
+        console.log("multiplication:",a*b);
+        console.log("division:",a/b);
+        console.log("module/remiander:",a%b);
+        console.log("exponential:",a**b);
+        // -------------------------------------------
+        let comperators = 'comparision operators';
+
+        let x ='5;'
+        let y =5;
+
+        console.log("loose equality(==):",x==y);
+        console.log("strict equality(===):",x===y);
+        console.log("loose inequality(!=):",x!=y);
+        console.log("strict inequality(!==):",x!==y);
+        console.log("(>,<,>=,<=):",x>=y);
+        // --------------------------------------------
+        let logic = 'logical operators';
+
+        let z = true;
+        let n = false;
+
+        console.log("AND (&&)",z&&n)
+        console.log("OR (||)",z||n);
+        console.log("NOT(!)",!n);
+        // -------------------------------------------------
+        let string='string operators';
+
+        let name ='id';
+        let title = 'human';
+
+        console.log(name +' is '+title);//old way
+        console.log(`${name} is ${title}`);//template literal
+        // ------------------------------------------------------------
+        let coe = 'type coercion';
+        let data ='javascript changes automatically types in some operators:';
+
+        console.log("5"+5);//52 -> string + number = string
+        console.log("5"-2);//3 -> string - number = number
+        console.log("5"*"2");;//10 -> coerced to numbers
+        console.log("nothing"-1);//NaN (Not a Number)
+
+
+    </script>
+</body>
+</html>
