@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>control flow</title>
+    </head>
+    <body>
+        <p>check in console.</p>
+        <script>
+            let head1 = 'if statement:';
+            let a = 100;
+
+            console.log(head1)
+            if (a > 50){
+                console.log("excellent..!");
+            }
+            // ---------------------------
+            let head2 = 'if-else statement:';
+            let mode = 'dark';
+
+            console.log(head2)
+            if (mode==='dark'){
+                console.log('theme is black');
+            }
+            else{
+                console.log("theme is light")
+            }
+            // ---------------------------
+            let head3='if-else-if statement:';
+            let age = 18;
+
+            console.log(head3)
+            if(age<18){
+                console.log('minor');
+            } 
+            else if(age = 18){
+                console.log("major")
+            }
+            else{
+                console.log("older/major")
+            }
+            // ---------------------------
+            let head4='switch statement:';
+            let user_type ="root";
+
+            console.log(head4)
+            switch(user_type){
+                case "root":
+                    console.log("full access");
+                    break;
+                case "user":
+                    console.log("access to basic usage.");
+                    break;
+                case "guest":
+                    console.log("restricted for some applications.");
+                    break;
+                default:
+                    console.log("unknown user")
+            }
+        </script>
+    </body>
+</html>
