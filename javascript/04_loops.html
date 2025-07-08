@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>loops</title>
+    </head>
+    <body>
+        <p>check in console.</p>
+        <script>
+
+            console.log('# for loop:')
+
+            for (let i=0;i<5;i++){
+                console.log("# number:",i);
+            } // runs until the condition is true
+            // --------------------------
+
+            console.log('# while loop:');
+
+            let j=0;
+
+            while(j<5){ //condition first
+                console.log('score:',j);
+                j++;
+            } // use when you don't know how many times it should run.
+            // --------------------
+
+            console.log('# do..while')
+
+            let k=0;
+
+            do{
+                console.log(' while loop runs once before checking condition');
+                k++;
+            }while(k<1);
+            // --------------------
+
+            console.log('# break');
+
+            for(let l=0; l<=10;l++){
+                if(l===5){
+                    break;
+                }
+                console.log('counting:',l)
+            } // stops looping immediately when condition is true.
+            // --------------------
+
+            console.log('# continue:');
+
+            for(let m=0;m<5;m++){
+                if(m==3){
+                    continue;
+                }
+                console.log('find missing term :',m);
+            } // skips the iteration when meet the condition & continue next iteration
+            // --------------------
+
+            console.log('# looping through arrays:');
+
+            let learn =["learn_#1","learn_#2","learn_#3"];
+
+            for(let n=0;n<learn.length;n++){
+                console.log('log learn :',learn[n]);
+            }
+        </script>
+    </body>
+</html>
