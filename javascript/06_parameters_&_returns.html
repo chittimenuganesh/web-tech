@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>parameters & returns</title>
+    </head>
+    <body>
+        <p>check console.</p>
+        
+        <script>
+            console.log('parameter_&_argument')
+            // parameter : variable in functon definition
+            //  argument : actual value passed in function call
+            function wish(greet){ // greet is a parameter
+                console.log('hello..,',greet)
+            }
+            wish('ganesh'); // ganesh is a argument
+            // -----------------------------
+
+            console.log('multiple parameters & returning values');
+
+            function mul(a,b){
+                return a*b;
+            }
+            console.log('multiplication:',mul(2,3));
+            // -----------------------------
+
+            console.log('"return" stop the loop:');
+
+            function loop(){
+                console.log('hi..!');
+                return;
+                console.log('how are you..?');
+            }
+            loop();
+            // ---------------------------
+
+            console.log('function reusability:');
+
+            function is_adult(age){
+                return age>=18; // return either TRUE or FALSE
+            }
+
+            let res = is_adult(21);// TRUE
+            if (res){
+                console.log('permission granted.');
+            }
+        </script>
+    </body>
+</html>
