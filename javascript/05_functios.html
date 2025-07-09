@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functios</title>
+</head>
+<body>
+    <!-- functions us a block of code to perform specific task, once define,, use it multiple times whn it neccessary. -->
+     <p>check console.</p>
+     <script>
+        console.log('classic way function:');
+
+        function wish(){
+            console.log('have a good day.');
+        }
+        wish(); // calling the function
+        // ------------------------------
+
+        console.log('function with parameters:');
+
+        function wish(name){
+            console.log('have a good day',name);
+        }
+        wish('ganesh');
+        // ------------------------------
+
+        console.log('function with return:');
+
+        function exponent(num){
+            return num**num;
+        }
+        console.log('exponent:',exponent(2));
+        // -----------------------------
+
+        console.log('function expression:');
+
+        const add = function (a,b){
+            return a+b;
+        }
+        console.log(add(25,25));
+        // ------------------------
+
+        console.log('arrow function:');
+
+        const x = (name) => {
+            return `${name} has entered the room `;
+        }
+        console.log(x('hunter'));
+        //  one-line version 
+        const square = x => x*x;
+        console.log('square',square(4));
+     </script>
+</body>
+</html>
