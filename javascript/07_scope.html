@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scope</title>
+</head>
+<body>
+    <p>check in console.</p>
+    <script>
+        //scope- the visibility of variables
+
+        console.log('global variable:');
+        // declared outside of function can be accessed anywhere.
+        let w='groza';
+
+        function shoot(){
+            console.log(w); // access global varibles
+        }
+        shoot();
+        // ----------------------
+
+        console.log('function/local scope:');
+        // declare inside the function only accessable inside that function.
+
+        function laptop(){
+            let component='chip';
+            console.log(component);
+        }
+        laptop();
+        //console.log(component); // error : laptop is not defined.
+        // ----------------------
+
+        console.log('block scope(let, const only):');
+        // block = anything inside {}- like if, for,...,
+
+        if(true){
+            let hide='thing';
+            console.log(hide);
+        }
+        //console.log(hide); // error: hide is not defined
+        // ----------------------------
+
+        console.log('nested scope:');
+
+        let main1='sea';
+        function word(){
+            let main2='food';
+            function word2(){
+                console.log(main2); // parent access
+                console.log(main1); // global scope
+            }
+            word2();
+        }
+        word();
+        // ------------------------------
+
+        console.log('shadowing(same name, but different scope):');
+
+        let rank='S';
+
+        function grant(){
+            let rank ='A';
+            console.log(rank); //local scope
+        }
+        grant();
+        console.log(rank);//global scope
+    </script>
+</body>
+</html>
