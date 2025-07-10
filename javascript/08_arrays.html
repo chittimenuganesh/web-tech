@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>arrays</title>
+    </head>
+    <body>
+        <p>check in console.</p>
+        <script>
+            console.log('creating arrays:');
+            let names=['name_1',"name_2",'name_3'];// array hold : string,
+            let num=[20,21,22]; // numbers,
+            // even boolean, objects.
+            console.log(names);console.log(num);
+            // ---------------------
+
+            console.log('accesiing values:');
+
+            console.log(names[1]);
+            console.log(num[2]);
+            // ---------------------
+
+            console.log('modifying array items:');
+            names[0]='name_4';
+            console.log(names);
+            // ---------------------
+
+            console.log('array length:');
+            console.log(num.length);
+            // ---------------------
+
+            console.log('basic methods:');
+            // /
+            // .push() : add item at end
+            // .pop() : remove item from end
+            // .unshift() : add item at beginning
+            // .shift() : add remove item from beginning
+            // .indexof() : get the index of item
+            // .include() : check if item exist/
+
+            num.push(28);
+            num.pop();
+            console.log(num);
+            // -----------------------------
+
+            console.log('looping through arrays:');
+
+            for (let i=0;i<names.length;i++){
+                console.log(names[i]);
+            }
+        </script>
+    </body>
+</html>
