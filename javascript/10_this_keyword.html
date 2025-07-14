@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>this keyword</title>
+    </head>
+    <body>
+        <p>check console.</p>
+        <script>
+            console.log('"this" refers to the owner of the function - the context in which it is being executed.');
+
+            //  inside an object
+
+            console.log('inside an object:');
+
+            let player ={
+                name:'ganesh',
+                no:'25',
+                display(){
+                    console.log('name:', this.name);
+                    console.log('no:',this.no);
+                }
+            };
+            player.display();
+            //  this.name refers to the object player
+            // ------------------------------
+
+            // outside an object
+
+            console.log('outside an object:');
+
+            console.log(this); // global object (window in browser)
+            // -------------------------------
+
+            // this in arrow function
+
+            console.log('this in arrow function:');
+
+            let player1 ={
+                name:'name_#1',
+                speak : () => {
+                    console.log(this.name);
+                }
+            };
+            player1.speak();
+            console.log('arrow function does not bind this -- they inherit it from the parent scope.');
+            // ---------------------------------
+
+            // nested method
+
+            console.log('nested method:');
+
+            let system ={
+                version:'1:0',
+                boot(){
+                    console.log('booting:',this.version);
+                }
+            }
+            system.boot();
+            // ---------------------------
+
+            // this changes based on caller
+
+            console.log('this changes based on caller:');
+
+            function show(){
+                console.log(this);
+            }
+            show(); // global object (window in browser)
+
+            let obj = {show};
+            obj.show(); // this now refers to obj
+        </script>
+    </body>
+</html>
