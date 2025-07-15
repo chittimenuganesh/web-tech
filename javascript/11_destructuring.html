@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Destructuring</title>
+</head>
+<body>
+  <h2>Check the console.</h2>
+
+  <script>
+    // object destructuring
+    
+    console.log('object destructuring:');
+
+    let agent = {
+      code: "X1",
+      rank: "SS",
+      weapon: "dagger"
+    };
+
+    let { code, rank } = agent;
+    console.log("Object Destructuring code:", code, "| rank:", rank);
+
+    let { code: codename } = agent;
+    console.log("Renamed code codename:", codename);
+    // ---------------------------------
+
+    // array destructuring
+
+    console.log('array destructuring:');
+
+    let team = ["Anand", "Ganesh", "Void"];
+
+    let [leader, deputy, shadow] = team;
+    console.log("Array Destructuring Leader:", leader, "| Deputy:", deputy, "| Shadow:", shadow);
+
+    let [ , , last] = team;
+    console.log("Skipped first two Last:", last);
+    // ------------------------------
+
+    // default values
+
+    console.log('default values:');
+
+    let { title = "Unknown" } = {};
+    console.log("Object Default title:", title);
+
+    let [x = 100] = [];
+    console.log("Array Default x:", x);
+
+
+    // nested destructuring
+
+    console.log('nested destructuring:');
+
+    let player = {
+      name: "Phantom",
+      stats: {
+        hp: 100,
+        power: 9000
+      }
+    };
+
+    let { stats: { power } } = player;
+    console.log("Nested Destructuring → power:", power);
+  </script>
+</body>
+</html>
