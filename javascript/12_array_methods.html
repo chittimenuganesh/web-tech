@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>array methods</title>
+    </head>
+    <body>
+        <p>check in console.</p>
+        <script>
+            // forEach()
+            console.log('for each:');
+
+            let squad =['player_1','player_2','player_3'];
+            squad.forEach((name,index)=> {
+                console.log(index,name);
+            });
+            // ------------------------
+
+            // map()
+            console.log('maop:');
+
+            let num = [1,2,3];
+            let squ = num.map(n=>n*n);
+            console.log(squ);
+            // -------------------------
+
+            // filter()
+            console.log('filter:');
+
+            let p = [200,300,400];
+            let res = p.filter(a=> a>300);
+            console.log(res);
+            // --------------------
+
+            // reduce()
+            console.log('reduce:');
+
+            let count = [1,2,3,4,5];
+            let total = count.reduce((sum,num)=>sum+num,0);
+            console.log(total);
+            // ----------------------
+
+            //  some() & every()
+            console.log('some() & every():');
+
+            let lvls=[800,900,1000];
+            console.log(lvls.some(x=>x>800)); // atleast one is need to be satisfy for true
+            console.log(lvls.every(l=>l>700)); // all are need to be satisfy for true
+        </script>
+    </body>
+</html>
