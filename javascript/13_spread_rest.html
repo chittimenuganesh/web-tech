@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>spread & rest operators</title>
+    </head>
+    <body>
+        <p>check in console.</p>
+        <script>
+            // spread operator
+            console.log('spread operator:');
+
+            // spread in arrays
+            console.log('spread in arrays:');
+            let a =[1,2,3];
+            let b=[...a, 4, 5];
+            console.log(b); 
+
+            // spread in objects
+            console.log('spread in objects:');
+            let user={name:'usr'};
+            let fulluser={...user, age: 30};
+            console.log(fulluser);
+            // -----------------------
+
+            // rest operator
+            console.log('rest operator:');
+
+            // rest in function parameters
+            console.log('rest in function parameters:');
+
+            function countmembers(...members) {
+                console.log(members.length);
+            }
+            countmembers("a","b","c");
+
+            // rest in destructuring
+            console.log('rest in destructuring:');
+
+            let [first, ...others] = [1, 2, 3, 4, 5];
+            console.log(first); 
+            console.log(others); 
+
+        </script>
+    </body>
+</html>
