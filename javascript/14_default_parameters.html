@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>default parameters</title>
+    </head>
+    <body>
+        <p>check in console.</p>
+        <script>
+            // default parameters
+            console.log('default parameters:');
+
+            function greet(name = 'Guest') {
+                console.log(`Hello, ${name}!`);
+            }
+            greet(); // No argument, should use default
+            greet('ganesh');
+        </script>
+    </body>
+</html>
