@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>callback function</title>
+    </head>
+    <body>
+        <p>check in console.</p>
+        <!-- a call back is a function passed as an argument to another function & executed later. -->
+        <script>
+            // function with call back
+            console.log('function with call back:');
+
+            function verify(id,callback){
+                console.log(`verifying ${id}`);
+                callback();
+            }
+            function showmsg(){
+                console.log('verified');
+            }
+
+            //  call with callback
+            verify('ganesh', showmsg);
+
+            // setTimeout example
+            console.log('setTimeout example:');
+            setTimeout( function (){
+                console.log('msg is delayed by 3 seconds');
+            },3000);
+
+            // array method with callback
+            console.log('array method with callback:');
+
+            let tasks =['task_1','task_2','task_3'];
+            tasks.forEach(function(task){
+                console.log('task:',task);
+            })
+
+        </script>
+    </body>
+</html>
