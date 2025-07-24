@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JSON (js object notation)</title>
+    </head>
+    <body>
+        <p>check in console.</p>
+        <script>
+            console.log('JSON (js object naotation):');
+
+            // JSON is a format for storing and transporting data.
+            // It is often used when data is sent from a server to a web page.
+
+            const person = {
+                name: 'ganesh',
+                age: 25,
+                city: 'unknown'
+            };
+
+            // convert to JSON string
+            console.log('convert to JSON string');
+
+            const json_string= JSON.stringify(person);
+            console.log(json_string);
+
+            // convert back to JS object
+            console.log('back to js object:');
+
+            const back_to_obj= JSON.parse(json_string);
+            console.log(back_to_obj);
+          
+        </script>
+    </body>
+</html>
