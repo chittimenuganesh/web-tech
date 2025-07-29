@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Date object</title>
+    </head>
+    <body>
+        <p>check in console.</p>
+        <script>
+                let now = new Date();
+        console.log("full date :", now);
+        console.log("year :", now.getFullYear());
+        console.log("month :", now.getMonth() + 1); 
+        console.log("date :", now.getDate());
+        console.log("day :", now.getDay()); 
+        console.log("hours :", now.getHours());
+        console.log("minutes :", now.getMinutes());
+        console.log("seconds :", now.getSeconds());
+        console.log("readable date :", now.toDateString());
+        console.log("locale date :", now.toLocaleDateString());
+        console.log("locale time:", now.toLocaleTimeString());
+        let target = new Date(2025, 1, 31);
+        console.log("target date:", target.toDateString());
+        </script>
+    </body>
+</html>
