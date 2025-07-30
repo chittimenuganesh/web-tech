@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>timers</title>
+    </head>
+    <body>
+        <p>check in console.</p>
+        <script>
+            console.log('timers :');
+
+            // setTimeout()
+            console.log('setTimeout :');
+
+            setTimeout(()=>{
+                console.log('execute after 3 seconds.')
+            },3000);
+            // ------------------
+
+            // setInterval()
+            console.log('setInterval :');
+
+            setInterval(()=>{
+                console.log('repeat for every 2 seconds.')
+            },2000);
+            // ------------------
+
+            // stopping interval
+            console.log('stopping interval :');
+
+            let x = 0;
+            let count = setInterval(()=>{
+                console.log('tic tok');
+                x++;
+                if (x==5){
+                    clearInterval(count);
+                }
+            },1000);
+            
+        </script>
+    </body>
+</html>
