@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>local/session storage</title>
+    </head>
+    <body>
+        <p>check in console.</p>
+        <script>
+            // save the simple data
+            console.log('save the data :');
+
+            localStorage.setItem('agent','code');
+            console.log('agent :',localStorage.getItem('agent'));
+            // --------------
+
+             // save object
+             console.log('saved object :');
+
+            const mission = {
+            target: "AI Core",
+            level: "S+",
+            status: "active"
+            };
+            localStorage.setItem("mission", JSON.stringify(mission));
+            console.log(JSON.stringify(mission))
+            // --------------
+
+             // retrieve and parse back
+             console.log('retrieve and parse back :');
+
+            const loadedMission = JSON.parse(localStorage.getItem("mission"));
+            console.log("Loaded Mission:", loadedMission);
+            // ------------------
+
+            // remove a single item
+            //localStorage.removeItem("agent");
+
+            // clear all storage
+            // localStorage.clear();
+        </script>
+    </body>
+</html>
