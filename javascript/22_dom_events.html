@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM Events</title>
+        <style>
+            .box {
+                width: 200px;
+                height: 100px;
+                background: lightgreen;
+                margin: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                cursor: pointer;
+        }
+        </style>
+    </head>
+    <body>
+        <p>DOM event [js]</p>  
+        <div type="'text" id="event_box" class="box">hover or click</div>   
+        <script>
+            const box = document.getElementById("event_box");
+            const input = document.getElementById("name_input");
+
+            // click event
+            box.addEventListener('click',()=>{
+                box.textContent = "Clicked!";
+                box.style.backgroundColor = "orange";
+            })
+
+            // mouseover event
+            box.addEventListener("mouseover", () => {
+            box.style.backgroundColor = "blue";
+            box.style.color = "white";
+            });
+
+            // mouseout event
+            box.addEventListener("mouseout", () => {
+            box.style.backgroundColor = "lightgreen";
+            box.style.color = "black";
+            });
+
+            // keyboard event
+            input.addEventListener("keyup", (event) => {
+            console.log("Key pressed:", event.key);
+            });
+        </script>
+    </body>
+</html>
