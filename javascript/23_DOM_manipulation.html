@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM manipulatiuon</title>
+        <style>
+            .task {
+                margin: 5px;
+                padding: 5px;
+                background: lightyellow;
+                border: 1px solid orange;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>task list</h2>
+        <button id="add_btn">add task</button>
+        <ul id="task_list"></ul>
+
+        <script>
+            const add_btn=document.getElementById('add_btn');
+            const task_list=document.getElementById('task_list');
+
+            let count=1;
+
+            //add a new task
+            add_btn.addEventListener('click',()=>{
+                const li =document.createElement('li'); // create li
+                li.textContent='Task'+count; // set text
+                li.classList.add('task'); // add class
+                task_list.appendChild(li); // add to list
+                count++;
+
+                // remove task when clicked
+                li.addEventListener('click',()=>{
+                    li.remove();
+                });
+            });
+
+        </script>
+    </body>
+</html>
+
+
+<!-- """"DOM methods""""
+
+document.createElement('tag')   => craete a new element
+parent.appendChild(element)     => add child to the end
+parent.prepend(element)         => add child to the beginning
+element.remove()                => remove element
+element.innerHTML / textContent => change content
+element.setAttribute('attr','value') => add/change attribute
+element.classList.add/remove/toggle() => manage CSS classes
+
+-->
