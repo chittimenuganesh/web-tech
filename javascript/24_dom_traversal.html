@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM traversal</title>
+  <style>
+    ul { padding: 10px; border: 2px solid black; width: 200px; }
+    li { margin: 5px; padding: 5px; background: lightblue; }
+  </style>
+</head>
+<body>
+
+  <ul id="list">
+    <li>Item 1</li>
+    <li id="special">Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+  </ul>
+
+  <script>
+    const special = document.getElementById("special");
+
+    // Parent
+    console.log("Parent:", special.parentElement);
+
+    // Children of <ul>
+    const list = document.getElementById("list");
+    console.log("Children:", list.children);
+
+    // First & Last child
+    console.log("First child:", list.firstElementChild.textContent);
+    console.log("Last child:", list.lastElementChild.textContent);
+
+    // Siblings
+    console.log("Next sibling:", special.nextElementSibling.textContent);
+    console.log("Previous sibling:", special.previousElementSibling.textContent);
+
+    // Modify using traversal
+    special.nextElementSibling.style.background = "orange"; // highlight Item 3
+  </script>
+
+</body>
+</html>
