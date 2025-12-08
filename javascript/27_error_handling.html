@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Error Handling Examples</title>
+</head>
+<body>
+
+<h1>JavaScript Error Handling check in console</h1>
+
+<script>
+
+//1. Basic try–catch example
+
+console.log("1) Basic try–catch");
+
+try {
+  let result = 10 / x; // x is not defined → ReferenceError
+  console.log(result);
+} catch (error) {
+  console.log("Error happened:", error.message);
+}
+
+
+//2. try–catch–finally
+
+console.log("\n2) try–catch–finally");
+
+try {
+  console.log("Start of block");
+  let a = b; // b is not defined
+} catch (err) {
+  console.log("Error:", err.message);
+} finally {
+  console.log("This ALWAYS runs");
+}
+
+
+//3. throw custom error
+
+console.log("\n3) throw custom error");
+
+function checkAge(age) {
+  if (age < 18) {
+    throw new Error("You must be 18+");
+  }
+  return "Allowed!";
+}
+
+try {
+  console.log(checkAge(16));
+} catch (e) {
+  console.log("Custom Error:", e.message);
+}
+
+
+//4. Types of Errors
+
+console.log("\n4) Types of Errors");
+
+try {
+  null.toUpperCase(); // TypeError
+} catch (e) {
+  console.log("Type:", e.name);
+  console.log("Message:", e.message);
+}
+
+try {
+  let arr = new Array(-1); // RangeError
+} catch (e) {
+  console.log("Type:", e.name);
+  console.log("Message:", e.message);
+}
+
+try {
+  eval("let !! x = 5"); // SyntaxError inside eval()
+} catch (e) {
+  console.log("Type:", e.name);
+  console.log("Message:", e.message);
+}
+
+
+//5. Promise Error Handling
+
+console.log("\n5) Promise Error Handling");
+
+fetch("https://wrong-api-url-for-demo.com/data")
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.log("Fetch Error:", err.message));
+
+
+//  6. async/await Error Handling
+
+console.log("\n6) async/await Error Handling");
+
+async function getData() {
+  try {
+    let res = await fetch("broken-url");
+    let data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.log("Async Error:", err.message);
+  }
+}
+
+getData();
+
+</script>
+
+</body>
+</html>
