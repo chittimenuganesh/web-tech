@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>26 - Events Advanced</title>
+  <style>
+    .item { padding: 10px; margin: 5px; background: lightblue; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h2>Event Delegation</h2>
+
+  <div id="parent">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <button id="add">Add Item</button>
+
+  <script>
+    const parent = document.getElementById("parent");
+    const addBtn = document.getElementById("add");
+
+    let count = 4;
+
+    // EVENT DELEGATION
+    parent.addEventListener("click", function(e) {
+      if (e.target.classList.contains("item")) {
+        alert("You clicked: " + e.target.textContent);
+      }
+    });
+
+    // Add new items dynamically
+
+    addBtn.addEventListener("click", function() {
+      const div = document.createElement("div");
+      div.textContent = `Item ${count}`;
+      div.className = "item";
+      parent.appendChild(div);
+      count++;
+    });
+  </script>
+
+</body>
+</html>
