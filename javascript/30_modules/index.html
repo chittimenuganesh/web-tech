@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modules</title>
+</head>
+<body>
+    <h2>Check console</h2>
+
+    <script type="module">
+        import greet from "./greet.js";
+        import { pi, add, sub } from "./math.js";
+
+        greet("Anand");
+
+        console.log("Pi:", pi);
+        console.log("Add:", add(5, 5));
+        console.log("Sub:", sub(10, 3));
+    </script>
+
+</body>
+</html>
