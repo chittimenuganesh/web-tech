@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>25 - Form Validation</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .error { color: red; font-size: 14px; }
+    input { margin-bottom: 10px; padding: 8px; width: 250px; display: block; }
+  </style>
+</head>
+<body>
+
+  <h2>Signup Form</h2>
+
+  <form id="signupForm">
+    <input type="text" id="username" placeholder="Username">
+    <span id="userErr" class="error"></span>
+
+    <input type="email" id="email" placeholder="Email">
+    <span id="emailErr" class="error"></span>
+
+    <input type="password" id="password" placeholder="Password">
+    <span id="passErr" class="error"></span>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const form = document.getElementById("signupForm");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // stop form from submitting
+
+      let valid = true;
+
+      // Get inputs
+      const username = document.getElementById("username").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Get error spans
+      const userErr = document.getElementById("userErr");
+      const emailErr = document.getElementById("emailErr");
+      const passErr = document.getElementById("passErr");
+
+      // Reset errors
+      userErr.textContent = "";
+      emailErr.textContent = "";
+      passErr.textContent = "";
+
+      // -------- VALIDATION RULES ---------
+
+      // Username
+      if (username.length < 3) {
+        userErr.textContent = "Username must have at least 3 letters.";
+        valid = false;
+      }
+
+      // Email
+      if (!email.includes("@") || !email.includes(".")) {
+        emailErr.textContent = "Enter a valid email.";
+        valid = false;
+      }
+
+      // Password
+      if (password.length < 6) {
+        passErr.textContent = "Password must be at least 6 characters.";
+        valid = false;
+      }
+
+      // If all good
+      if (valid) {
+        alert("Form submitted successfully!");
+        form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
