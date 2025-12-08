@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Closures</title>
+</head>
+<body>
+
+<h1>Closures </h1>
+
+<script>
+
+// 1. Basic closure
+function outer() {
+    let secret = 42;
+    function inner() {
+        console.log("Secret:", secret);
+    }
+    return inner;
+}
+
+let showSecret = outer();
+showSecret();
+
+
+// 2. Counter with closure
+function createCounter() {
+    let count = 0;
+    return function () {
+        count++;
+        console.log(count);
+    };
+}
+
+let counter = createCounter();
+counter();
+counter();
+counter();
+
+
+// 3. Function factory
+function makeAdder(x) {
+    return function(y) {
+        return x + y;
+    };
+}
+
+let add10 = makeAdder(10);
+console.log(add10(15));
+
+
+// 4. Timer example
+function timeoutMessage(message) {
+    setTimeout(() => {
+        console.log(message);
+    }, 2000);
+}
+
+timeoutMessage("Closure in action");
+
+</script>
+</body>
+</html>
