@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Higher-Order Functions</title>
+</head>
+<body>
+
+<h1>Higher-Order Functions</h1>
+
+<script>
+
+// 1. Function passed as argument
+
+function greet(name) {
+  return "Hello " + name;
+}
+
+function processUser(callback) {
+  console.log(callback("Anand"));
+}
+
+processUser(greet);
+
+// 2. Returning a function
+
+function multiplier(x) {
+  return function(y) {
+    return x * y;
+  };
+}
+
+let double = multiplier(2);
+console.log(double(10));
+
+
+// 3. map / filter / reduce
+
+let nums = [1, 2, 3, 4];
+
+console.log(nums.map(n => n * 2));          // map
+console.log(nums.filter(n => n % 2 === 0)); // filter
+console.log(nums.reduce((a, b) => a + b));  // reduce
+
+</script>
+</body>
+</html>
