@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects</title>
+</head>
+<body>
+    check in console.
+    <script>
+        // objects is a collection of key-value pairs used to store and organizs the data.
+        // creating an object
+        console.log('create an object:');
+        let student ={
+            name:'ganesh',
+            no:25,
+            grade:'A'
+        };
+        console.log(student);
+        // ---------------------
+
+        // accessing properties
+        console.log('accesiing properties');
+
+        console.log(student.name); // dot notation
+        console.log(student["grade"]); // bracket notation
+        // -------------------------
+
+        // modifying values
+
+        console.log('modifying values:');
+
+        student.no=50;
+        student["name"]='hunter';
+        console.log(student)
+        // -------------------------
+
+        // adding new properties
+
+        console.log('adding new properties:');
+
+        student.year='3rd year';
+        console.log(student);
+        // ---------------------
+
+        // deleting properties
+
+        console.log('deleting properties:');
+
+        delete student.no;
+        console.log(student);
+        // ------------------------
+
+        //  nested object
+
+        console.log('nested object:');
+
+        let war_unit = {
+            machine:'x20',
+            vehicle:{
+                hp:200,
+                status:'running'
+            }
+        };
+
+        console.log(war_unit.vehicle.hp);
+        // --------------------------------
+
+        // object in array/ array in object
+
+        console.log('object in array/ array in object:');
+
+        let y1 = [
+            {name:'name_1',grade:'A'},
+            {name:'name_2',grade:'B'}
+        ];
+        let y2={
+            marks:[21,22,23]
+        };
+        console.log(y1,y2);
+        // --------------------------------
+
+        // object method (function inside object)
+
+        console.log('object method:');
+
+        let u ={
+            code:'vscode',
+            call(){
+                console.log('start code.');
+            }
+        };
+        u.call();
+
+
+    </script>
+</body>
+</html>
