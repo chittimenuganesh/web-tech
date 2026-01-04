@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(1rem, 2vw, 2rem); 
+  padding: clamp(1rem, 4vw, 3rem); 
+  align-items: center;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 12px;
+  width: fit-content;
+
+}
+.options {
+  position: relative; 
+  cursor: pointer;
+}
+
+.options img {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 0.5rem); 
+  right: 0;
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+

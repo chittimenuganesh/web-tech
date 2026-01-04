@@ -1,0 +1,17 @@
+.block {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(1rem, 2vw, 2rem);   
+  padding: clamp(1rem, 4vw, 3rem); 
+  align-items: center;
+}
+
+input{
+    height: 2rem;
+    width: 90%;
+}
+button{
+    height: 2rem;
+    width: 5rem;
+    border-radius: 5px;
+}
