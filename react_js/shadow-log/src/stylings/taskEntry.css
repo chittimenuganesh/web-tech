@@ -1,0 +1,127 @@
+.entry-container {
+  position: relative;  /* makes absolute button stay inside */
+  background-color: white;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  padding-bottom: clamp(4rem, 6vw, 5rem);
+  /* border-radius: 12px; */
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  transition: min-height 0.3s ease;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+
+.entry-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.entry-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 2px solid rgb(172, 43, 236);
+  font-size: 14px;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.entry-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgb(172, 43, 236) inset;
+}
+
+.btn-next {
+  position: absolute;        /* key: absolute inside entry-container */
+  bottom: 1.5rem;
+  right: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(172, 43, 236);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-next:hover {
+  background-color: rgb(143, 35, 200);
+}
+
+.btn-next:active {
+  transform: scale(0.97);
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: clamp(1rem, 5%, 2rem);
+  width: 100%;
+  padding-top: 1rem;
+  align-items: stretch;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  padding: 1rem;
+  min-height: 120px;
+}
+
+.summary .label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.summary .value {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .inputs-wrapper {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .entry-input {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .inputs-wrapper {
+    flex-direction: column;
+  }
+
+  .btn-next {
+    position: static;       /* moves button below inputs */
+    margin-top: 1.5rem;
+    align-self: flex-end;   /* optional: align right on mobile */
+  }
+
+  .summary {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

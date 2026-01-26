@@ -1,0 +1,120 @@
+.box {
+  position: relative;
+  background-color: white;
+  padding: clamp(1rem, 4vw, 3rem);
+  padding-bottom: clamp(4rem, 6vw, 5rem); /* space for button */
+  /* border-radius: 12px; */
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: min-height 0.3s ease;
+}
+
+
+.title {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+
+.mood-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+  margin-bottom: 1.5rem;
+}
+
+.mood-card {
+  padding: 0.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 25%) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.mood-card.activated {
+  letter-spacing: 3px;
+  background-color: rgb(172, 43, 236);
+  color: rgb(252, 252, 252);
+  box-shadow: rgb(172, 43, 236) 0px 7px 29px;
+}
+
+.btn-next {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(172, 43, 236);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-next:hover {
+  background-color: rgb(143, 35, 200);
+}
+
+.btn-next:active {
+  transform: scale(0.97);
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: clamp(1rem, 5%, 2rem);
+  width: 100%;
+  padding-top: 1rem;
+  align-items: stretch;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background-color: rgba(172, 43, 236, 0.623);
+  color: white;
+  padding: 1rem;
+  min-height: 120px;
+}
+
+.summary .label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.summary .value {
+  font-weight: normal;
+  font-size: 1rem;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 768px) {
+  .btn-next {
+    position: static;
+    margin: 1.5rem auto 0 auto;
+    display: block;
+    align-self: center;
+  }
+
+  .box {
+    overflow: visible;
+  }
+
+  .summary {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

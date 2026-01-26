@@ -18,7 +18,7 @@
                 name:'ganesh',
                 no:'25',
                 display(){
-                    console.log('name:', this.name);
+                    console.log('name:',this.name);
                     console.log('no:',this.no);
                 }
             };
@@ -38,9 +38,9 @@
             console.log('this in arrow function:');
 
             let player1 ={
-                name:'name_#1',
+                userName:'name_#1',
                 speak : () => {
-                    console.log(this.name);
+                    console.log(this.userName);
                 }
             };
             player1.speak();
