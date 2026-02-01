@@ -2,8 +2,6 @@
   background-color: white;
   padding: clamp(1rem, 4vw, 3rem);
   padding-bottom: clamp(4rem, 6vw, 5rem);
-  /* border-radius: 12px; */
-  /* box-shadow: 0 10px 30px rgba(0,0,0,0.1); */
   width: 100%;
   text-align: center;
   display: flex;
@@ -15,12 +13,14 @@
 .review-title {
   font-weight: bold;
   font-size: 22px;
+  color: black;
 }
 
 .section-title {
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 0.5rem;
+  color: black;
 }
 
 .button-group {
@@ -32,23 +32,21 @@
 .review-btn {
   padding: 0.6rem 1rem;
   border-radius: 50px;
-  border: none;
+  border: 2px solid black;
   background-color: white;
-  /* color: rgb(172, 43, 236); */
+  color: black;
   font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 0 8px rgba(0,0,0,0.15);
   transition: all 0.2s ease;
 }
 
 .review-btn:hover {
-  box-shadow: 0 0 12px rgba(172,43,236,0.4);
+  background-color: #f2f2f2;
 }
 
 .review-btn.activated {
-  background-color: rgb(172, 43, 236);
+  background-color: black;
   color: white;
-  box-shadow: 0 0 12px rgba(172,43,236,0.5);
 }
 
 .time-input {
@@ -63,7 +61,7 @@
   max-width: 150px;
   padding: 0.5rem;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 2px solid black;
   font-size: 1rem;
   text-align: center;
   box-sizing: border-box;
@@ -74,7 +72,7 @@
   padding: 0.7rem 1.5rem;
   border-radius: 50px;
   border: none;
-  background-color: rgb(172, 43, 236);
+  background-color: black;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -82,7 +80,7 @@
 }
 
 .submit-btn:hover {
-  background-color: rgb(143, 35, 200);
+  background-color: #000;
 }
 
 .submit-btn:active {

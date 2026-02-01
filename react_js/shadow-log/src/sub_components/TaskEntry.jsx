@@ -1,57 +1,49 @@
 import { useState } from "react";
+import { useShadowLog } from "../context/ShadowLogContext";
 import "../stylings/taskEntry.css";
 
-function TaskEntry({ onNext, onSaveTask }) {
-  // Stores main task text
-  const [task, setTask] = useState("");
+function TaskEntry() {
+  // GLOBAL STATE
+  const { task, setTask, setStep } = useShadowLog();
 
-  // Stores sub-task / description text
-  const [subTask, setSubTask] = useState("");
+  // LOCAL UI STATE
+  const [mainTask, setMainTask] = useState(task?.main || "");
+  const [subTask, setSubTask] = useState(task?.sub || "");
+  const [submitted, setSubmitted] = useState(!!task);
 
-  // Controls whether form or summary is shown
-  const [submitted, setSubmitted] = useState(false);
-
-  // Runs when form is submitted
   const handleSubmit = (e) => {
-    e.preventDefault(); // prevent page reload
+    e.preventDefault();
 
-    // Stop if inputs are empty
-    if (!task || !subTask) return;
+    if (!mainTask || !subTask) return;
 
-    // Send task data to parent component (App)
-    if (onSaveTask) {
-      onSaveTask({
-        main: task,
-        sub: subTask,
-      });
-    }
+    // SAVE TO GLOBAL STATE
+    setTask({
+      main: mainTask,
+      sub: subTask,
+    });
 
-    // Lock the form and show summary
+    // LOCK UI
     setSubmitted(true);
 
-    // Move to next step (ExecutionReview)
-    onNext?.();
+    // MOVE FLOW FORWARD
+    setStep("review");
   };
 
   return (
     <div className="entry-container">
-      {/* If not submitted → show input form */}
       {!submitted ? (
         <form className="entry-form" onSubmit={handleSubmit}>
           <p className="title">ENTER TASK</p>
 
-          {/* Task inputs wrapper */}
           <div className="inputs-wrapper">
-            {/* Main task input */}
             <input
               type="text"
               placeholder="Main Task"
-              value={task}
-              onChange={(e) => setTask(e.target.value)}
+              value={mainTask}
+              onChange={(e) => setMainTask(e.target.value)}
               className="entry-input"
             />
 
-            {/* Sub task / description input */}
             <textarea
               placeholder="Sub Task"
               value={subTask}
@@ -61,7 +53,6 @@ function TaskEntry({ onNext, onSaveTask }) {
             />
           </div>
 
-          {/* Button aligned using CSS */}
           <div className="button-wrapper">
             <button className="btn-next" type="submit">
               Next
@@ -69,16 +60,16 @@ function TaskEntry({ onNext, onSaveTask }) {
           </div>
         </form>
       ) : (
-        /* After submission → show summary */
+        /* SUMMARY VIEW */
         <div className="summary">
           <div className="summary-item">
             <p className="label">Main Task:</p>
-            <p className="value">{task}</p>
+            <p className="value">{task.main}</p>
           </div>
 
           <div className="summary-item">
             <p className="label">Sub Task:</p>
-            <p className="value">{subTask}</p>
+            <p className="value">{task.sub}</p>
           </div>
         </div>
       )}

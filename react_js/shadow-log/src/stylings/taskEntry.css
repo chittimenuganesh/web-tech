@@ -1,10 +1,8 @@
 .entry-container {
-  position: relative;  /* makes absolute button stay inside */
+  position: relative;
   background-color: white;
   padding: clamp(1rem, 4vw, 2.5rem);
   padding-bottom: clamp(4rem, 6vw, 5rem);
-  /* border-radius: 12px; */
-  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -13,12 +11,15 @@
   transition: min-height 0.3s ease;
 }
 
+/* ---------- TITLE ---------- */
 .title {
   font-size: 20px;
   font-weight: bolder;
   margin-bottom: 1rem;
+  color: black;
 }
 
+/* ---------- FORM ---------- */
 .entry-form {
   width: 100%;
   display: flex;
@@ -32,43 +33,53 @@
   gap: 1rem;
 }
 
+/* ---------- INPUTS ---------- */
 .entry-input {
   width: 100%;
   padding: 0.8rem 1rem;
   border-radius: 10px;
-  border: 2px solid rgb(172, 43, 236);
+  border: 2px solid black;
   font-size: 14px;
   resize: none;
   box-sizing: border-box;
+  background-color: white;
+  color: black;
+}
+
+.entry-input::placeholder {
+  color: black;
+  opacity: 0.5;
 }
 
 .entry-input:focus {
   outline: none;
-  box-shadow: 0 0 5px rgb(172, 43, 236) inset;
+  box-shadow: 0 0 0 2px black inset;
 }
 
+/* ---------- BUTTON ---------- */
 .btn-next {
-  position: absolute;        /* key: absolute inside entry-container */
+  position: absolute;
   bottom: 1.5rem;
   right: 1.5rem;
   padding: 0.7rem 1.5rem;
   font-size: 16px;
   border: none;
   border-radius: 50px;
-  background-color: rgb(172, 43, 236);
+  background-color: black;
   color: white;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .btn-next:hover {
-  background-color: rgb(143, 35, 200);
+  background-color: #111;
 }
 
 .btn-next:active {
   transform: scale(0.97);
 }
 
+/* ---------- SUMMARY ---------- */
 .summary {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -86,6 +97,9 @@
   border-radius: 12px;
   padding: 1rem;
   min-height: 120px;
+  background-color: white;
+  border: 2px solid black;
+  color: black;
 }
 
 .summary .label {
@@ -98,6 +112,7 @@
   font-size: 1rem;
 }
 
+/* ---------- RESPONSIVE ---------- */
 @media (min-width: 768px) {
   .inputs-wrapper {
     flex-direction: row;
@@ -115,9 +130,9 @@
   }
 
   .btn-next {
-    position: static;       /* moves button below inputs */
+    position: static;
     margin-top: 1.5rem;
-    align-self: flex-end;   /* optional: align right on mobile */
+    align-self: flex-end;
   }
 
   .summary {

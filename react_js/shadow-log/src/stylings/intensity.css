@@ -1,20 +1,22 @@
 input[type='range']{
-    width: 100%;
-    accent-color:rgb(172, 43, 236);
+  width: 100%;
+  accent-color: black;
 }
 
 .labels{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 15px;
+  color: black;
 }
 
 .adjust{
-    font-size: 20px;
-    font-weight: bolder;
+  font-size: 20px;
+  font-weight: bolder;
+  color: black;
 }
 
 .intensity{
-    padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }

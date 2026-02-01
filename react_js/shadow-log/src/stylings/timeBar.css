@@ -1,0 +1,47 @@
+.timebar-card {
+  width: 100%;
+  padding: 24px;
+  background-color: #f6f6fa; /* soft light */
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.timebar-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+/* Chart */
+.timebar-chart {
+  width: 100%;
+}
+
+/* Legend */
+.timebar-legend {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.timebar-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Dot */
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legend-dot.orange {
+  background-color: #ffb84f;
+}

@@ -1,35 +1,27 @@
-import { useState } from "react";
-import EmotionSelector from "./components/EmotionSelector";
-import TaskEntry from "./components/TaskEntry";
-import ExecutionReview from "./components/ExectionReview";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Dashboard from "./components/Dashboard";
+import EmotionSelector from "./sub_components/EmotionSelector";
+import TaskEntry from "./sub_components/TaskEntry";
+import ExecutionReview from "./sub_components/ExectionReview";
 
 function App() {
-  const [showTask, setShowTask] = useState(false);
-  const [showReview, setShowReview] = useState(false);
-
-  const [moodData, setMoodData] = useState(null);
-  const [taskData, setTaskData] = useState(null);
-
   return (
-    <div className="app-container">
-      <EmotionSelector
-        onNext={(data) => {
-          setMoodData(data);
-          setShowTask(true);
-        }}
-      />
+    <Router>
+      <Navbar />
+      <div className="app-container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/analytics" element={<Dashboard />} />
 
-      {showTask && (
-        <TaskEntry
-          onSaveTask={(data) => setTaskData(data)}
-          onNext={() => setShowReview(true)}
-        />
-      )}
-
-      {showReview && moodData && taskData && (
-        <ExecutionReview mood={moodData} task={taskData} />
-      )}
-    </div>
+          {/* Optional: keep your flow routes if needed */}
+          <Route path="/emotion" element={<EmotionSelector />} />
+          <Route path="/task" element={<TaskEntry />} />
+          <Route path="/review" element={<ExecutionReview />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

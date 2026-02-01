@@ -2,9 +2,7 @@
   position: relative;
   background-color: white;
   padding: clamp(1rem, 4vw, 3rem);
-  padding-bottom: clamp(4rem, 6vw, 5rem); /* space for button */
-  /* border-radius: 12px; */
-  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+  padding-bottom: clamp(4rem, 6vw, 5rem);
   width: 100%;
   text-align: center;
   overflow: hidden;
@@ -13,13 +11,15 @@
   transition: min-height 0.3s ease;
 }
 
-
+/* ---------- TITLE ---------- */
 .title {
   font-size: 20px;
   font-weight: bolder;
   margin-bottom: 1rem;
+  color: black;
 }
 
+/* ---------- MOOD GRID ---------- */
 .mood-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -27,26 +27,32 @@
   margin-bottom: 1.5rem;
 }
 
+/* ---------- MOOD CARD ---------- */
 .mood-card {
   padding: 0.5rem;
   border-radius: 50px;
   cursor: pointer;
-  border: 0;
+  border: 2px solid black;
   background-color: white;
-  box-shadow: rgb(0 0 0 / 25%) 0 0 8px;
+  color: black;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   font-size: 15px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
+.mood-card:hover {
+  transform: scale(1.03);
+}
+
+/* ---------- ACTIVE MOOD ---------- */
 .mood-card.activated {
   letter-spacing: 3px;
-  background-color: rgb(172, 43, 236);
-  color: rgb(252, 252, 252);
-  box-shadow: rgb(172, 43, 236) 0px 7px 29px;
+  background-color: black;
+  color: white;
 }
 
+/* ---------- BUTTON ---------- */
 .btn-next {
   position: absolute;
   bottom: 1.5rem;
@@ -55,20 +61,21 @@
   font-size: 16px;
   border: none;
   border-radius: 50px;
-  background-color: rgb(172, 43, 236);
+  background-color: black;
   color: white;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .btn-next:hover {
-  background-color: rgb(143, 35, 200);
+  background-color: #111;
 }
 
 .btn-next:active {
   transform: scale(0.97);
 }
 
+/* ---------- SUMMARY ---------- */
 .summary {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -84,10 +91,11 @@
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  background-color: rgba(172, 43, 236, 0.623);
-  color: white;
+  background-color: white;
+  color: black;
   padding: 1rem;
   min-height: 120px;
+  border: 2px solid black;
 }
 
 .summary .label {
@@ -101,6 +109,7 @@
   white-space: pre-wrap;
 }
 
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
   .btn-next {
     position: static;
