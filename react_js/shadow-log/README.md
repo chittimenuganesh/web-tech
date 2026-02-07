@@ -1,59 +1,86 @@
 # Shadow-Log
 
-Shadow-Log. Personal self-observation.  
-Track mood, tasks, execution. Quietly. Efficiently.  
+Shadow-Log — personal self-observation.  
+A minimal daily log system focused on awareness, not noise.
+
+---
 
 ## Features
 
-- Select mood + intensity.  
-- Enter main task + subtask.  
-- Review execution: completion, time, reason.  
-- Saved to localStorage.  
-- Responsive: desktop / mobile layout adapts naturally.  
+- Select mood with intensity  
+- Enter main task and subtasks  
+- Review execution (completion, time spent, reason)  
+- Data persists using `localStorage`  
+- Responsive layout (desktop & mobile)
 
-## Tech
+---
 
-- React 18 + Vite  
-- CSS  
-- LocalStorage for persistence  
+## Tech Stack
+
+- React 18 (Vite)
+- CSS
+- LocalStorage (no backend)
+
+---
 
 ## Project Structure
 
 shadow-log/
 │
-├─ components/
-│ ├─ EmotionSelector.jsx
-│ ├─ TaskEntry.jsx
-│ ├─ ExecutionReview.jsx
+├─ src/
+│  ├─ components/
+│  │  ├─ Analytics.jsx
+│  │  ├─ Home.jsx
+│  │  ├─ Navbar.jsx
+│  |  └─ utils/
+│  │     ├─ getLogs.js
+│  │     ├─ getIntensity.js
+│  │     ├─ generateMonthHeatmapGrid.js
+│  │     └─ mapLogsToDates.js
+│  |
+│  │
+│  ├─ context/
+│  │  └─ ShadowLogContext.jsx
+│  │
+│  ├─ sub_components/
+│  │  ├─ Intensity.jsx
+|  |  ├─ EmotionSelector.jsx
+│  │  ├─ TaskEntry.jsx
+│  │  └─ ExecutionReview.jsx
+│  │
+│  ├─ stylings/
+│  │  ├─ analytics.css
+│  │  ├─ home.css
+│  │  ├─ navbar.css
+│  │  ├─ emotionSelector.css
+│  │  ├─ taskEntry.css
+│  │  ├─ executionReview.css
+│  │  └─ intensity.css
+│  │
+│  ├─ App.jsx
+|  ├─ App.css
+│  ├─ main.jsx
+│  └─ index.css
 │
-├─ sub_components/
-│ ├─ Intensity.jsx # used inside EmotionSelector
-│
-├─ stylings/
-│ ├─ emotionSelector.css
-│ ├─ taskEntry.css
-│ ├─ executionReview.css
-│ ├─ intensity.css # styles for subcomponent
-│
-├─ App.jsx
-├─ main.jsx
 ├─ index.html
-├─ App.css 
 ├─ package.json
 ├─ README.md
-
-## Next
-
-- Add history / past logs  
-- Build insights & analytics  
-- Improve UX and add subtle animations
+└─ vite.config.js
 
 
-## Run
+---
 
-```bash
-npm install
-npm run dev
+## upcoming/resolve
+- one entry per day
+- task entry placeholder correction 
 
+---
 
-## check the output on the console
+## Console Output
+
+On successful startup, Vite will show:
+
+VITE v5.x.x  ready in xxx ms
+
+➜  Local:   http://localhost:5173/
+➜  Network: use --host to expose

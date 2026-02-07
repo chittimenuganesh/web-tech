@@ -1,37 +1,75 @@
 import React, { useEffect, useState } from "react";
-import { getLogs } from './utils/getLogs'
-import generateYearGrid from "./utils/generateYearGrid";
+import { getLogs } from "./utils/getLogs";
+import generateMonthHeatmapGrid from "./utils/generateMonthHeatmapGrid";
 import getIntensity from "./utils/getIntensity";
 import "../stylings/analytics.css";
 
-function Analytics() {
+const MONTHS = [
+  "January","February","March","April","May","June",
+  "July","August","September","October","November","December"
+];
+
+export default function Analytics() {
   const [logs, setLogs] = useState([]);
+  const [tooltip, setTooltip] = useState(null);
+
+  const year = new Date().getFullYear();
 
   useEffect(() => {
     setLogs(getLogs());
   }, []);
 
-  const days = generateYearGrid(logs);
-
   return (
     <div className="analytics-page">
-      <h2 className="analytics-title">Activity Overview</h2>
+      <h1 className="year-title">{year}</h1>
 
-      <div className="heatmap-grid">
-        {days.map((day) => (
-          <div
-            key={day.date}
-            className={`heat-box ${getIntensity(day.log)}`}
-            title={
-              day.log
-                ? `${day.log.review.timeSpent} min · ${day.log.review.completion}`
-                : "No activity"
-            }
-          />
-        ))}
+      <div className="months-grid">
+        {MONTHS.map((month, index) => {
+          const days = generateMonthHeatmapGrid(logs, year, index);
+
+          return (
+            <div key={month} className="month-card">
+              <div className="month-name">{month}</div>
+
+              <div className="month-calendar">
+                {days.map((day, i) =>
+                  day.empty ? (
+                    <div key={i} className="heat-box empty" />
+                  ) : (
+                    <div
+                      key={day.fullDate}
+                      className={`heat-box ${getIntensity(day.log)}`}
+                      onMouseEnter={(e) => {
+                        if (!day.log) return;
+                        setTooltip({
+                          x: e.clientX,
+                          y: e.clientY,
+                          day,
+                        });
+                      }}
+                      onMouseLeave={() => setTooltip(null)}
+                    />
+                  )
+                )}
+              </div>
+            </div>
+          );
+        })}
       </div>
+
+      {tooltip && (
+        <div
+          className="tooltip"
+          style={{ top: tooltip.y + 12, left: tooltip.x + 12 }}
+        >
+          <strong>{tooltip.day.fullDate}</strong>
+          <div>{tooltip.day.log?.task?.title}</div>
+          <div>
+            {tooltip.day.log?.review?.timeSpent} min ·{" "}
+            {tooltip.day.log?.review?.completion}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
-
-export default Analytics;
