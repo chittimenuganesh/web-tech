@@ -1,0 +1,88 @@
+BACKEND QUICK NOTES (STICKY VERSION)
+=============================
+
+CORE IDEA
+---------
+Backend = brain of the app.
+Client asks → Server thinks → Server responds.
+
+NODE vs EXPRESS
+---------------
+Node.js:
+- JavaScript runtime
+- Runs the server
+- Talks to OS, CPU, memory
+- Boss / Engine
+
+Express.js:
+- Framework on Node
+- Handles routes & requests
+- Makes HTTP easy
+- Manager / PA
+
+SERVER BASICS
+-------------
+Server:
+- A program always listening
+- Waits for requests
+- Sends responses
+
+app.listen(PORT):
+- Starts server
+- Opens a door (port)
+- Keeps backend alive
+
+REQUEST & RESPONSE
+------------------
+req (request):
+- Data coming from client
+- URL, method, body
+
+res (response):
+- Data sent back to client
+- Text, JSON, status
+
+One request → One response
+
+HTTP METHODS
+------------
+GET    → Read data
+POST   → Create data
+PUT    → Update data
+DELETE → Remove data
+
+DATA FORMAT
+-----------
+JSON:
+- Key-value data
+- Language independent
+- Used everywhere
+
+Example:
+{
+  "mood": "calm"
+}
+
+IMPORTANT RULES
+---------------
+- Frontend NEVER talks to DB directly
+- Backend owns DB
+- Any code change → restart server
+- Ctrl + C stops server
+
+MENTAL FLOW
+-----------
+Browser/React
+    ↓ request
+Backend (Node + Express)
+    ↓ logic
+Database
+    ↑ data
+Backend
+    ↑ response
+Browser
+
+LOCK SENTENCE
+-------------
+Node runs the server.
+Express organizes requests.

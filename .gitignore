@@ -1,4 +1,7 @@
-# React apps (keep local only)
-react_js/Todo_App/
-react_js/Weather/
-react_js/practing_app/
+# Ignore all React apps
+react_js/*
+
+# BUT allow shadow-log
+!react_js/shadow-log/
+!react_js/shadow-log/**
+
