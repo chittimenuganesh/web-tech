@@ -32,3 +32,13 @@ app.get('/sum', (req, res) => {
 
   res.send(`Sum is ${a + b}`);
 });
+
+// First POST route
+app.post('/sum', (req, res) => {
+  console.log(req.body);
+
+  let a = Number(req.body.a);
+  let b = Number(req.body.b);
+
+  res.send(`Sum is ${a + b}`);
+});
